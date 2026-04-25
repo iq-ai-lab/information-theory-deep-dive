@@ -2,16 +2,37 @@
 
 # 📡 Information Theory Deep Dive
 
-**"Cross-Entropy 손실을 쓰는 것과, 그것이 '평균 최적 부호 길이'라는 Shannon의 근본 메시지를 아는 것은 다르다"**
+### Cross-Entropy 손실
+
+$$H(p, q) = -\sum_x p(x) \log q(x)$$
+
+### 을 **쓰는 것** 과, 그것이 **"평균 최적 부호 길이"** 라는 Shannon 의 근본 메시지를 아는 것은 **다르다.**
 
 <br/>
 
-> *"KL-divergence를 수식으로 외우는 것과 — KL이 왜 비대칭이고 $\geq 0$인지 Jensen 부등식으로 증명할 수 있는 것은 다르다.  
-> VAE의 ELBO를 '최적 하한'이라고 부르는 것과, 그것이 정확히 **Evidence − KL** 구조로 분해됨을 유도할 수 있는 것은 다르다."*
+> *KL-divergence 를 **수식으로 외우는 것** 과, KL 이 왜 비대칭이고*
+>
+> $$\mathrm{KL}(p \| q) \geq 0$$
+>
+> *인지 **Jensen 부등식** 으로 증명할 수 있는 것은 다르다.*
+>
+> *VAE 의 ELBO 를 **"최적 하한"** 이라고 부르는 것과, 그것이 정확히*
+>
+> $$\log p(x) = \underbrace{\mathrm{ELBO}}_{\text{Evidence Lower Bound}} + \mathrm{KL}\bigl(q(z|x) \| p(z|x)\bigr)$$
+>
+> *의 **Evidence − KL** 구조로 분해됨을 유도할 수 있는 것은 다르다.*
 
-Shannon의 공리적 유도부터 AEP 기반 Source/Channel Coding 정리,  
-VAE·GAN·Diffusion·InfoNCE의 정보이론적 해석까지  
-**"왜 $-\log p$인가"** 라는 질문으로 ML 손실 함수의 수학적 기반을 끝까지 파헤칩니다
+<br/>
+
+**다루는 정리 (시간순)**
+
+Shannon 1948 *Entropy + Source Coding + Channel Coding* · Kraft 1949 / McMillan 1956 *Kraft 부등식* · Kullback–Leibler 1951 *KL-divergence* · Csiszár 1967 *f-divergence* · Cover–Thomas 1991 *AEP + Asymptotic equipartition* · Jensen 1906 *Jensen 부등식* · Tishby 1999 *Information Bottleneck* · van den Oord 2018 *InfoNCE*
+
+<br/>
+
+**핵심 질문**
+
+> **왜 $-\log p$ 인가** — Shannon 의 공리적 유도부터 AEP 기반 Source / Channel Coding 정리, VAE · GAN · Diffusion · InfoNCE 의 정보이론적 해석까지, ML 손실 함수의 수학적 기반을 끝까지 파헤칩니다.
 
 <br/>
 
